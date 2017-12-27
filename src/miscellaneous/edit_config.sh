@@ -7,3 +7,7 @@ sed -ri "s|elasticsearch.url:[^\r\n]*|elasticsearch.url: $ELASTICSEARCH_PROTOCOL
 # SSL
 sed -ri "s|elasticsearch.ssl.verify:[^\r\n]*|elasticsearch.ssl.verify: true|" /etc/kibana/kibana.yml
 sed -ri "s|elasticsearch.ssl.ca:[^\r\n]*|elasticsearch.ssl.ca: /etc/elasticsearch/searchguard/ssl/ca/root-ca.pem|" /etc/kibana/kibana.yml
+# BASE PATH
+if [ ! -z $SERVER_BASE_PATH ]; then
+	sed -ri "s|#server.basePath:[^\r\n]*|server.basePath: $SERVER_BASE_PATH|" /etc/kibana/kibana.yml
+fi

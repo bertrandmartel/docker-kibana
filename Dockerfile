@@ -83,6 +83,7 @@ RUN chmod +x -R /run/
 EXPOSE 5601
 
 VOLUME /etc/kibana
+RUN chown -R kibana:kibana /usr/share/kibana/optimize/bundles
 
 ENV KIBANA_PWD="changeme" \
     ELASTICSEARCH_HOST="elasticsearch" \
