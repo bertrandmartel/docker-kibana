@@ -86,7 +86,8 @@ VOLUME /etc/kibana
 
 ENV KIBANA_PWD="changeme" \
     ELASTICSEARCH_HOST="elasticsearch" \
-    ELASTICSEARCH_PORT="9200"
+    ELASTICSEARCH_PORT="9200" \
+    ELASTICSEARCH_PROTOCOL="https"
 
 ENTRYPOINT ["/run/entrypoint.sh"]
 CMD ["kibana"]
